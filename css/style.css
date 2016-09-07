@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'Glober Bold';
+  src: url('../fonts/GloberBold/GloberBold.eot');
+  src: url('../fonts/GloberBold/GloberBold.eot?#iefix') format('embedded-opentype'), url('../fonts/GloberBold/GloberBold.woff') format('woff'), url('../fonts/GloberBold/GloberBold.ttf') format('truetype'), url('../fonts/GloberBold/GloberBold.svg#Glober Bold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Glober Regular';
+  src: url('../fonts/GloberRegular/GloberRegular.eot');
+  src: url('../fonts/GloberRegular/GloberRegular.eot?#iefix') format('embedded-opentype'), url('../fonts/GloberRegular/GloberRegular.woff') format('woff'), url('../fonts/GloberRegular/GloberRegular.ttf') format('truetype'), url('../fonts/GloberRegular/GloberRegular.svg#Glober Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: 'Glober Regular', Arial, sans-serif;
+  font-size: 14px;
+  background-image: url('../img/bg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.home-header__logo {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.header__logo-title {
+  padding-top: 225px;
+  height: 0;
+  overflow: hidden;
+  background-image: url('../img/logo.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: inherit;
+  margin: 0;
+}
+.walk__wrapper {
+  background: rgba(0, 0, 10, 0.7);
+  padding-bottom: 32px;
+  padding-top: 32px;
+}
+.walk {
+  border-bottom: 1px solid #cd91e5;
+  border-top: 1px solid #cd91e5;
+  padding-top: 50px;
+  padding-bottom: 65px;
+  text-align: center;
+}
+.walk h2.walk__title {
+  text-transform: uppercase;
+  font-size: 60px;
+  color: #cd91e5;
+  line-height: 65px;
+  font-family: 'Glober Bold', Arial, sans-serif;
+}
+.walk h2.walk__title span {
+  font-size: 38px;
+  font-family: 'Glober Regular', Arial, sans-serif;
+}
+.walk .walk__text {
+  color: #f4d9ff;
+  font-size: 20px;
+  font-family: 'Glober Regular', Arial, sans-serif;
+  display: inline-block;
+  width: 39.5%;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav > li > a:hover {
+  background: none;
+}
