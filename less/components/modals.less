@@ -3,6 +3,13 @@
   box-shadow: none;
   border:none;
   border-radius: 0;
+  margin-top: 160px;
+
+}
+.modal-lg{
+  max-width:1324px ;
+  width: 100%;
+
 }
 .modal-lider{
   .modal-body{
@@ -14,14 +21,85 @@
       top: 0%;
       height: 487px;
       width: 480px;
-      background:url(../img/zvKL.png)
+      background:url(../img/zvKL.png);
     }
   }
 }
+.modal-mil{
+  .modal-body{
+    position: relative;
+    &:before{
+      position: absolute;
+      content: '';
+      left: -11%;
+      top: -134px;
+      height: 385px;
+      width: 437px;
+      background:url(../img/zv4KM.png) no-repeat;
+    }
+  }
+  .modal-body__wrapper{
+    background: #D4A6CE;
+    position: absolute;
+    &:before{
+      position: absolute;
+      content: '';
+      right: 10px;
+      top: 10px;
+      height: 158px;
+      width: 158px;
+      background:url(../img/mil.png);
+    }
+    &:after{
+      position: absolute;
+      content: '';
+      right: -10%;
+      bottom: -18%;
+      height: 425px;
+      width: 396px;
+      background: url(../img/zvKM.png) no-repeat;
+      background-size: 100%;
+    }
+  }
+  .modal-body__img{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    border: 20px solid @white;
+    margin-left: -15px;
+    max-width: 450px;
+      img{
+        width: 100%;
+      }
+  }
+  .modal-body__content{
+    margin-left: 35px;
+    margin-top: 67px;
+    h3{
+      font-family: @clober-bold;
+      margin-bottom: 0;
+      line-height: 22px;
+      font-size: 40px;
+    }
+    span{
+      font-family:@clober-regular;
+      font-style: italic;
+      font-size: 30px;
+    }
+    .modal-body__content-text {
+      margin-top: 55px;
+      p{
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
 .close{
   outline: none!important;
   opacity: 1;
-  margin-right: -25px;
+  margin-right: -50px;
   span{
     cursor: pointer;
     height: 50px;
@@ -39,11 +117,11 @@
     cursor: pointer;
   }
   span:before{
-    top: 38px;
+    top: 0;
     .transform_one_par();
   }
   span:after{
-    top: 48px;
+    top:10px;
     .transform_two_par();
   }
 }

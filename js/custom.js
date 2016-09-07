@@ -2,31 +2,35 @@ $(document).ready(function () {
 
     initialize_owl($('#owl1'));
 
-    $('a[href="#home"]').on('shown.bs.tab', function () {
+    $('a[href="#leader"]').on('shown.bs.tab', function () {
         initialize_owl($('#owl1'));
     }).on('hide.bs.tab', function () {
         destroy_owl($('#owl1'));
     });
 
-    $('a[href="#profile"]').on('shown.bs.tab', function () {
+    $('a[href="#n-leader"]').on('shown.bs.tab', function () {
         initialize_owl($('#owl2'));
     }).on('hide.bs.tab', function () {
         destroy_owl($('#owl2'));
     });
 
-    $('a[href="#messages"]').on('shown.bs.tab', function () {
+    $('a[href="#mil"]').on('shown.bs.tab', function () {
         initialize_owl($('#owl3'));
+
     }).on('hide.bs.tab', function () {
         destroy_owl($('#owl3'));
+
     });
 
-    $('a[href="#settings"]').on('shown.bs.tab', function () {
-        initialize_owl($('#owl4'));
-    }).on('hide.bs.tab', function () {
-        destroy_owl($('#owl4'));
-    });
+
 });
-
+//Owl Slider v4
+jQuery("#owl3").owlCarousel({
+    items:4,
+    itemsDesktop : [1000,3],
+    itemsTablet : [600,2],
+    itemsMobile : [479,1]
+});
 function initialize_owl(el) {
     el.owlCarousel({
         loop: true,
