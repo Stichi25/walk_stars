@@ -16,3 +16,25 @@
   background-repeat: no-repeat;
   background-size:cover;
 }
+
+//bg-gradient-linear
+.bg-gradient-linear-btn(@color1, @color2, @color3, @color4 ){
+  background: -webkit-linear-gradient(177deg, @color1, @color2, @color3, @color4 ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(177deg, @color1, @color2, @color3, @color4 ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(177deg, @color1, @color2, @color3, @color4 ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(177deg, @color1, @color2, @color3, @color4 ); /* Standard syntax */
+}
+//transform
+.transform_one_par(@rotate:rotate(45deg)){
+  -webkit-transform: @rotate;
+  -ms-transform: @rotate;
+  transform: @rotate;
+}
+
+.transform_two_par(@translate:translateY(-10px), @rotate_2:rotate(-45deg)){
+  -webkit-transform: @translate  @rotate_2;
+  -ms-transform: @translate  @rotate_2;
+  -o-transform:@translate  @rotate_2;
+  -moz-transform:@translate  @rotate_2;
+  transform: @translate  @rotate_2;
+}

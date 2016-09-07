@@ -1,0 +1,49 @@
+.modal-content{
+  background-color: transparent;
+  box-shadow: none;
+  border:none;
+  border-radius: 0;
+}
+.modal-lider{
+  .modal-body{
+    background: #D5BF9C;
+    &:before{
+      position: absolute;
+      content: '';
+      left: -28%;
+      top: 0%;
+      height: 487px;
+      width: 480px;
+      background:url(../img/zvKL.png)
+    }
+  }
+}
+.close{
+  outline: none!important;
+  opacity: 1;
+  margin-right: -25px;
+  span{
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    display: block;
+  }
+  span:before, span:after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 2px;
+    border-radius: 1px;
+    background: #fff;
+    cursor: pointer;
+  }
+  span:before{
+    top: 38px;
+    .transform_one_par();
+  }
+  span:after{
+    top: 48px;
+    .transform_two_par();
+  }
+}

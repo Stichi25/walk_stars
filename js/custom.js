@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     initialize_owl($('#owl1'));
@@ -20,7 +19,12 @@ $(document).ready(function () {
     }).on('hide.bs.tab', function () {
         destroy_owl($('#owl3'));
     });
-    
+
+    $('a[href="#settings"]').on('shown.bs.tab', function () {
+        initialize_owl($('#owl4'));
+    }).on('hide.bs.tab', function () {
+        destroy_owl($('#owl4'));
+    });
 });
 
 function initialize_owl(el) {
