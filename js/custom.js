@@ -25,12 +25,7 @@ $(document).ready(function () {
 
 });
 //Owl Slider v4
-jQuery("#owl3").owlCarousel({
-    items:4,
-    itemsDesktop : [1000,3],
-    itemsTablet : [600,2],
-    itemsMobile : [479,1]
-});
+
 function initialize_owl(el) {
     el.owlCarousel({
         loop: true,
@@ -52,8 +47,49 @@ function initialize_owl(el) {
             }
         }
     });
+    $("#owl3").owlCarousel({
+        items:4,
+        itemsDesktop : [1200,3],
+        itemsTablet : [600,2],
+        itemsMobile : [479,1]
+    });
 }
 
 function destroy_owl(el) {
     el.data('owlCarousel').destroy();
 }
+
+//скрытие элементов
+$('.btn-leader').click(function(){
+    $(".walk__wrapper").css("display", "none");
+    $(".tab-content #leader").css("display", "block");
+    $(".tabs-header__logo").css("display", "block");
+    $(".tab-content #n-leader").css("display", "none");
+    $(".tab-content #mil").css("display", "none");
+    $(".home-header__logo").css("display", "none");
+});
+$('.btn-n-leader').click(function(){
+    $(".walk__wrapper").css("display", "none");
+    $(".tab-content #n-leader").css("display", "block");
+    $(".tabs-header__logo").css("display", "block");
+    $(".tab-content #leader").css("display", "none");
+    $(".tab-content #mil").css("display", "none");
+    $(".home-header__logo").css("display", "none");
+});
+$('.btn-mil').click(function(){
+    $(".walk__wrapper").css("display", "none");
+    $(".tab-content #mil").css("display", "block");
+    $(".tabs-header__logo").css("display", "block");
+    $(".tab-content #leader").css("display", "none");
+    $(".tab-content #n-leader").css("display", "none");
+    $(".home-header__logo").css("display", "none");
+});
+$('.tabs-header__logo-title').click(function(){
+    $(".home-header__logo").css("display", "block");
+    $(".walk__wrapper").css("display", "block");
+    $(".tab-content #mil").css("display", "none");
+    $(".tabs-header__logo").css("display", "none");
+    $(".tab-content #leader").css("display", "none");
+    $(".tab-content #n-leader").css("display", "none");
+    
+});

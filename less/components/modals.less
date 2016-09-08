@@ -6,26 +6,79 @@
   margin-top: 160px;
 
 }
-.modal-lg{
-  max-width:1324px ;
-  width: 100%;
 
-}
 .modal-lider{
+  .modal-lg{
+    max-width:1115px ;
+    width: 100%;
+  }
   .modal-body{
-    background: #D5BF9C;
+    position: relative;
     &:before{
       position: absolute;
       content: '';
-      left: -28%;
-      top: 0%;
+      left: -22%;
+      top: 19px;
       height: 487px;
-      width: 480px;
-      background:url(../img/zvKL.png);
+      width: 528px;
+      background:url(../img/zv1KL.png);
+      z-index: 1;
+    }
+  }
+  .modal-body__wrapper{
+    background: #D5BF9C;
+    position: absolute;
+    &:before{
+      position: absolute;
+      content: '';
+      left: 19.3%;
+      top: 44px;
+      height: 92px;
+      width: 92px;
+      background:url(../img/lider.png) no-repeat;
+      z-index: 3;
+    }
+
+  }
+  .modal-body__img{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    max-width: 450px;
+    margin-right: -15px;
+    img{
+      width: 100%;
+    }
+  }
+  .modal-body__content{
+    margin-left: 35px;
+    margin-top: 67px;
+    h3{
+      font-family: @clober-bold;
+      margin-bottom: 0;
+      line-height: 22px;
+      font-size: 25px;
+    }
+    span{
+      font-family:@clober-regular;
+      font-style: italic;
+      font-size: 25px;
+    }
+    .modal-body__content-text {
+      margin-top: 55px;
+      p{
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
     }
   }
 }
 .modal-mil{
+  .modal-lg{
+    max-width:1324px ;
+    width: 100%;
+  }
+
   .modal-body{
     position: relative;
     &:before{
@@ -36,6 +89,7 @@
       height: 385px;
       width: 437px;
       background:url(../img/zv4KM.png) no-repeat;
+
     }
   }
   .modal-body__wrapper{
@@ -99,7 +153,7 @@
 .close{
   outline: none!important;
   opacity: 1;
-  margin-right: -50px;
+  margin-right: -70px;
   span{
     cursor: pointer;
     height: 50px;
