@@ -538,6 +538,8 @@ body:before {
   border-image-source: url(../img/border-img.png);
   border-image-repeat: round;
   border-image-slice: 26 fill;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
   width: 70%;
   /*width: 252px;
