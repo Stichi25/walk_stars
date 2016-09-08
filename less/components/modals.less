@@ -10,23 +10,29 @@
   .modal-lg{
     max-width:1115px ;
     width: 100%;
+    @media (min-width: 992px) and (max-width: 1500px) {
+      width: 900px;
+    }
   }
   .modal-body{
     position: relative;
     &:before{
       position: absolute;
       content: '';
-      left: -22%;
+      left: -21.3%;
       top: 19px;
       height: 487px;
       width: 528px;
-      background:url(../img/zv1KL.png);
+      background:url(../img/zvKL.png);
       z-index: 1;
     }
   }
   .modal-body__wrapper{
-    background: #D5BF9C;
-    position: absolute;
+    display: -webkit-flex;
+    display: flex;
+    background: linear-gradient(45deg, rgba(253, 253, 253, 0) 9%, #D5BF9C 10%, #D5BF9C);
+
+    position: relative;
     &:before{
       position: absolute;
       content: '';
@@ -45,18 +51,20 @@
     overflow: hidden;
     max-width: 450px;
     margin-right: -15px;
-    img{
-      width: 100%;
-    }
+    background:url(../img/img_avatar_m.jpg) no-repeat;
+    background-size: cover;
+
   }
   .modal-body__content{
     margin-left: 35px;
     margin-top: 67px;
+    padding-bottom: 21px;
     h3{
       font-family: @clober-bold;
       margin-bottom: 0;
       line-height: 22px;
       font-size: 25px;
+
     }
     span{
       font-family:@clober-regular;
@@ -78,6 +86,9 @@
   .modal-lg{
     max-width:1324px ;
     width: 100%;
+    @media (min-width: 992px) and (max-width: 1500px) {
+      width: 900px;
+    }
   }
 
   .modal-body{
@@ -95,7 +106,9 @@
   }
   .modal-body__wrapper{
     background: #D4A6CE;
-    position: absolute;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
     &:before{
       position: absolute;
       content: '';
@@ -123,9 +136,8 @@
     border: 20px solid @white;
     margin-left: -15px;
     max-width: 450px;
-      img{
-        width: 100%;
-      }
+    background:url(../img/img_avatar_m.jpg) no-repeat;
+    background-size: cover;
   }
   .modal-body__content{
     margin-left: 35px;
@@ -135,6 +147,9 @@
       margin-bottom: 0;
       line-height: 22px;
       font-size: 40px;
+      @media (min-width: 992px) and (max-width: 1500px) {
+        font-size: 30px;
+      }
     }
     span{
       font-family:@clober-regular;
@@ -143,6 +158,7 @@
     }
     .modal-body__content-text {
       margin-top: 55px;
+      padding-bottom: 28%;
       p{
         font-size: 17px;
         margin-bottom: 20px;
@@ -155,7 +171,7 @@
 .close{
   outline: none!important;
   opacity: 1;
-  margin-right: -70px;
+  margin-right: -50px;
   span{
     cursor: pointer;
     height: 50px;

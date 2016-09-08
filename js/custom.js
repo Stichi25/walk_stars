@@ -93,3 +93,4 @@ $('.tabs-header__logo-title').click(function(){
     $(".tab-content #n-leader").css("display", "none");
     
 });
+

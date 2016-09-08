@@ -5,6 +5,9 @@
 .home-header__logo{
   margin-top: 60px;
   margin-bottom: 20px;
+  @media(min-width:1000px) and (max-width: 1500px){
+    margin-top: 20px;
+  }
 }
 .header__logo-title{
   padding-top:225px;
@@ -13,6 +16,10 @@
   .bg-img('logo.png');
   background-size: inherit;
   margin: 0;
+  @media(min-width:1000px) and (max-width: 1500px){
+    background-size: 20%;
+    padding-top: 142px;
+  }
 
 }
 //logo tabs
@@ -22,6 +29,10 @@
   margin-top:4%;
   margin-bottom: 5%;
   display: none;
+  @media (max-width: 1500px){
+    margin-top:3%;
+    margin-bottom: 2.5%;
+  }
 
 }
 .tabs-header__logo-title{
@@ -34,6 +45,11 @@
   top: -57px;
   position: absolute;
   cursor: pointer;
+  @media (max-width: 1500px){
+    background-size: 68%;
+    top: -57px;
+    left: 74px;
+  }
 }
 
 //walk__stars
@@ -53,17 +69,27 @@
   border-top:1px solid @lilac ;
   padding-top:50px;
   padding-bottom: 65px;
-
   text-align: center;
+  @media (max-width: 1500px){
+    padding-top: 19px;
+    padding-bottom: 35px;
+  }
   h2.walk__title{
     text-transform: uppercase;
     font-size:60px;
     color:@lilac;
     line-height: 50px;
     font-family: @clober-bold;
+    @media (max-width: 1500px){
+      font-size:50px;
+      line-height: 35px;
+    }
     span{
       font-size: 38px;
       font-family: @clober-regular;
+      @media (max-width: 1500px){
+        font-size:28px;
+      }
     }
 
   }
@@ -73,6 +99,10 @@
     font-family: @clober-regular;
     display: inline-block;
     width: 39.5%;
+    @media (max-width: 1500px){
+      font-size: 18px;
+      width: 50%;
+    }
   }
 }//.walk
 //walk_tabs
@@ -85,9 +115,16 @@
     font-family: @clober-bold;
     text-align: center;
     margin-top: 30px;
+    @media (max-width: 1500px){
+      font-size: 50px;
+      line-height: 33px;
+    }
     span{
       font-size: 38px;
       font-family: @clober-regular;
+      @media (max-width: 1500px){
+        font-size: 28px;
+      }
     }
 
   }
@@ -96,13 +133,7 @@
 //nav-tabs
 .nav-tabs{
   border-bottom: none;
-  position: absolute;
-  bottom:20px;
-  width: 62%;
-  left: 19%;
-  @media (max-width: 1366px){
-    width: 100%;
-  }
+
 }
 .nav>li>a:hover{
   background: none;
@@ -111,6 +142,7 @@
 
 //tabs
 .owl-carousel__content{
+
   .rounded-x{
     position: relative;
     /*background:url(../img/border-img.png) ;
@@ -141,6 +173,10 @@
     text-align: center;
     font-family: @clober-regular;
     font-weight: lighter;
+    @media(min-width:1000px) and (max-width: 1500px){
+      margin-top: -10px;
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -151,15 +187,20 @@
   border-image-slice: 26 fill;
   .border-radius(50%);
   width: 70%;
-  @media (max-width: 1366px){
-    width: 90%;
-    }
+
   /*width: 252px;
   height: 252px;*/
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  @media(min-width:1000px) and (max-width: 1500px){
+    width: 74%;
+    border: 19px solid transparent;
+    border-image-source: url(../img/border-img.png);
+    border-image-repeat: round;
+    border-image-slice: 26 fill;
+  }
   img{
     width: 100%;
   }
@@ -171,33 +212,47 @@
   background-position: 20px -3px;
   height: 0;
   padding-bottom: 76%;
-  @media (max-width: 1366px){
-    padding-bottom: 100%;
+  background-size: 90%;
+  @media(min-width:1000px) and (max-width: 1500px){
+    padding-bottom: 88%;
     background-size: 100%;
     background-position: inherit;
   }
   -webkit-box-reflect: below -34px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(78%, transparent), to(fade(@yellow, 28%)));
+}
+#mil{
+  margin-bottom: -30px;
+  @media(min-width:1000px) and (max-width: 1500px){
+    margin-bottom: 0;
+  }
+  h3{
+    margin-top: 0;
+  }
 }
 #mil .owl-carousel__content-bg{
   background: url(../img/zv4KM.png) no-repeat;
   background-size: 96%;
   height: 0;
   padding-bottom: 70%;
+  @media(min-width:1000px) and (max-width: 1500px){
+    background-size: 82%;
+    background-position: 30px;
+    padding-bottom: 80%;
+  }
   .owl-carousel__content-img{
     width: 62%;
     margin-top: 70px;
-    @media (max-width: 1366px){
-      width: 73%;
-      margin-top: 52px;
+    @media(min-width:1000px) and (max-width: 1500px){
+      width: 55%;
+      margin-top: 61px;
     }
-    @media (max-width: 1024px){
+    /*@media (max-width: 1000px){
       border-image-slice: 24 fill;
       border: 19px solid transparent;
-    }
+    }*/
   }
-  @media (max-width: 1366px){
-    padding-bottom: 100%;
-  }
+
+
 }
 .owl-carousel .owl-item {
   text-align: center;
@@ -210,4 +265,9 @@
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
+  @media(min-width:1000px) and (max-width: 1500px){
+    height: 24px;
+    width: 50px;
+    background-size: contain;
+  }
 }
