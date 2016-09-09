@@ -16,7 +16,12 @@
   background-repeat: no-repeat;
   background-size:cover;
 }
-
+.bg-image-color(@bg-image-color, @bg-image-color2){
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from(@bg-image-color2), to(@bg-image-color));
+  background-image: -webkit-linear-gradient(@bg-image-color,@bg-image-color2 );
+  background-image: -moz-linear-gradient(@bg-image-color, @bg-image-color2);
+  background-image: -o-linear-gradient(@bg-image-color, @bg-image-color2);
+}
 //bg-gradient-linear
 .bg-gradient-linear-btn(@color1, @color2, @color3, @color4 ){
   background: -webkit-linear-gradient(177deg, @color1, @color2, @color3, @color4 ); /* For Safari 5.1 to 6.0 */
@@ -44,6 +49,12 @@
   -webkit-box-shadow: @string;
   -moz-box-shadow:    @string;
   box-shadow:         @string;
+}
+//box-shadow 4
+.box-shadow-four (@string_1, @string_2,@string_3, @string_4) {
+  -webkit-box-shadow: @string_1, @string_2,@string_3, @string_4;
+  -moz-box-shadow:  @string_1, @string_2,@string_3, @string_4;
+  box-shadow:        @string_1, @string_2,@string_3, @string_4;
 }
 //border radius
 .border-radius (@radius) {
