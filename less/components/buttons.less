@@ -12,14 +12,37 @@
   @media (max-width: 1200px){
     font-size: 12px;
   }
-
+  @media (max-width: 991px){
+    width: 100%;
+    padding: 10px !important;
+  }
+  @media (max-width: 767px){
+    width: 52%;
+  }
+  @media (max-width: 480px){
+    width: 100%;
+  }
 }
 .nav-tabs{
   margin-top: 100px;
-  @media (max-width: 1500px) and (min-width: 1024px){
+  @media (max-width: 1500px){
     margin-top: 50px;
   }
+  @media (max-width: 991px){
+   margin-bottom: 50px;
+  }
+  @media (max-width: 767px){
+    text-align: center;
+  }
 }
+.nav-tabs>li{
+  @media (max-width: 767px){
+    float: none;
+    margin-bottom: 48px;
+  }
+}
+
+
 .nav-tabs__wrapper{
   text-align: center;
 }

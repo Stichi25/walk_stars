@@ -17,8 +17,12 @@
   background-size: inherit;
   margin: 0;
   @media(min-width:1000px) and (max-width: 1500px){
-    background-size: 20%;
+    background-size: contain;
     padding-top: 142px;
+  }
+  @media (max-width: 480px){
+    padding-top: 128px;
+    background-size: contain;
   }
 
 }
@@ -32,6 +36,9 @@
   @media (max-width: 1500px){
     margin-top:3%;
     margin-bottom: 2.5%;
+  }
+  @media (max-width: 767px){
+    background: fade(@accent, 50%);
   }
 
 }
@@ -49,6 +56,13 @@
     background-size: 68%;
     top: -57px;
     left: 74px;
+  }
+  @media (max-width: 767px){
+   background-size: contain;
+    padding-top: 92px;
+    position: relative;
+    top: inherit;
+    left: inherit;
   }
 }
 
@@ -82,13 +96,17 @@
     font-family: @clober-bold;
     @media (max-width: 1500px){
       font-size:50px;
-      line-height: 35px;
+      line-height: 1;
+    }
+    @media (max-width: 480px){
+      font-size: 40px;
+      line-height: 24px;
     }
     span{
       font-size: 38px;
       font-family: @clober-regular;
-      @media (max-width: 1500px){
-        font-size:28px;
+      @media (max-width: 480px){
+        font-size: 15px;
       }
     }
 
@@ -103,6 +121,11 @@
       font-size: 18px;
       width: 50%;
     }
+    @media (max-width: 767px){
+      font-size: 14px;
+      width: 100%;
+    }
+
   }
 }//.walk
 //walk_tabs
@@ -119,11 +142,18 @@
       font-size: 50px;
       line-height: 33px;
     }
+    @media (max-width: 480px){
+      font-size: 32px;
+      line-height: 17px;
+    }
     span{
       font-size: 38px;
       font-family: @clober-regular;
       @media (max-width: 1500px){
         font-size: 28px;
+      }
+      @media (max-width: 480px){
+        font-size: 14px;
       }
     }
 
@@ -173,6 +203,7 @@
     width: 100%;
     display: block;
     height: auto;
+
   }
   a{
     border-radius: 50%;
@@ -182,10 +213,10 @@
     margin-right: auto;
     display: block;
     position: relative;
-
+    outline:none;
   }
   .icon{
-    background: url(../img/border-img.png) no-repeat;
+    background: url(../img/border-img1.png) no-repeat;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -195,6 +226,16 @@
     background-size: cover;
   }
 
+}
+#leader, #n-leader{
+  @media (min-width: 1000px) and (max-width: 1500px) {
+      margin-top: 70px;
+  }
+  .owl-carousel__content-img {
+    @media (min-width: 1000px) and (max-width: 1500px) {
+      width: 80%;
+    }
+  }
 }
 
 .owl-carousel__content-bg{
@@ -238,4 +279,10 @@
     width: 50px;
     background-size: contain;
   }
+}
+
+
+.effect{
+ opacity:0;
+  display: none;
 }

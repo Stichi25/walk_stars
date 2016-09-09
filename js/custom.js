@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     initialize_owl($('#owl1'));
     $('a[href="#leader"]').on('shown.bs.tab', function () {
         initialize_owl($('#owl1'));
@@ -24,7 +23,7 @@ $(document).ready(function () {
 
 
 });
-//Owl Slider v4
+//Owl Slider 
 
 function initialize_owl(el) {
     el.owlCarousel({
