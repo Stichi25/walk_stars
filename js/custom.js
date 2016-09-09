@@ -1,4 +1,5 @@
 //Owl Slider ini-tabes
+$(window).resize(function(){
 $(document).ready(function () {
 
     initialize_owl($('#owl1'));
@@ -32,7 +33,6 @@ function initialize_owl(el) {
         margin: 10,
         responsiveClass: true,
         navigation: true,
-        responsiveBaseWidth: window,
         navigationText:	["<i class='fa-left fa-icon'></i>",
             "<i class='fa-right fa-icon'></i>"],
        
@@ -64,6 +64,8 @@ function initialize_owl(el) {
 function destroy_owl(el) {
     el.data('owlCarousel').destroy();
 }
+});
+$(window).resize();
 /*$(window).resize(function(){
     var width = $(window).width();
     if (width>991){
@@ -85,39 +87,39 @@ $(window).resize();*/
 
 //скрытие элементов
 $('.btn-leader').click(function(){
-    $(".walk__wrapper").css("display", "none");
-
+    $(".walk__wrapper").addClass("opaque");
     $(".tab-content #leader").css("display", "block");
     $(".tab-content #leader").addClass('animated slideInRight');
-
+    $(".tabs-header__logo").addClass('animated fadeIn');
     $(".tabs-header__logo").css("display", "block");
     $(".tab-content #n-leader").css("display", "none");
     $(".tab-content #mil").css("display", "none");
     $(".home-header__logo").css("display", "none");
 });
 $('.btn-n-leader').click(function(){
-    $(".walk__wrapper").css("display", "none");
+    $(".walk__wrapper").addClass("opaque");
     $(".tab-content #n-leader").css("display", "block");
 
     $(".tab-content #n-leader").addClass('animated slideInRight');
-
+    $(".tabs-header__logo").addClass('animated fadeIn');
     $(".tabs-header__logo").css("display", "block");
     $(".tab-content #leader").css("display", "none");
     $(".tab-content #mil").css("display", "none");
     $(".home-header__logo").css("display", "none");
 });
 $('.btn-mil').click(function(){
-    $(".walk__wrapper").css("display", "none");
+    $(".walk__wrapper").addClass("opaque");
     $(".tab-content #mil").css("display", "block");
     $(".tab-content #mil").addClass('animated slideInRight');
     $(".tabs-header__logo").css("display", "block");
+    $(".tabs-header__logo").addClass('animated fadeIn');
     $(".tab-content #leader").css("display", "none");
     $(".tab-content #n-leader").css("display", "none");
     $(".home-header__logo").css("display", "none");
 });
 $('.tabs-header__logo-title').click(function(){
     $(".home-header__logo").css("display", "block");
-    $(".walk__wrapper").css("display", "block");
+    $(".walk__wrapper").removeClass("opaque");
     $(".tab-content #mil").css("display", "none");
     $(".tabs-header__logo").css("display", "none");
     $(".tab-content #leader").css("display", "none");

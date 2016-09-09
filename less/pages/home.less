@@ -29,7 +29,7 @@
 //logo tabs
 .tabs-header__logo{
   position: relative;
-  background:  radial-gradient(circle farthest-corner at 164px 70px, #271A7D 2%, rgba(0, 0, 10, 0.7)9%);
+  background:  radial-gradient(circle farthest-corner at 164px 70px, #271A7D -1%, rgba(0, 0, 10, 0.7)9%);
   margin-top:4%;
   margin-bottom: 5%;
   display: none;
@@ -71,9 +71,15 @@
   background: radial-gradient(circle farthest-corner at 50% -38px, rgba(39, 26, 125, 0.69) 6%, rgba(0, 0, 10, 0.7) 21%);
   padding-bottom: 32px;
   padding-top: 32px;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
   overflow: hidden;
-  transition:all 500ms linear;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity:1;
 
 }//.walk__wrapper
 
@@ -164,12 +170,16 @@
 //nav-tabs
 .nav-tabs{
   border-bottom: none;
+
+}
+.fixed__nav-tabs{
   position: absolute;
-  bottom: 5%;
-  left: 21%;
-  @media (max-width: 991px){
-    position: relative;
-    left:inherit;
+  bottom: 2.5%;
+  left: 0;
+  right: 0;
+  @media (max-width: 767px){
+    bottom: 0;
+    top: 80%;
   }
 }
 .nav>li>a:hover{
@@ -182,7 +192,9 @@
   position: relative;
   overflow-x: hidden;
 }
-
-
+//effects opacity
+.opaque{
+  opacity: 0;
+}
 
 
