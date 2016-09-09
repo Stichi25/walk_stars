@@ -164,7 +164,13 @@
 //nav-tabs
 .nav-tabs{
   border-bottom: none;
-
+  position: absolute;
+  bottom: 5%;
+  left: 21%;
+  @media (max-width: 991px){
+    position: relative;
+    left:inherit;
+  }
 }
 .nav>li>a:hover{
   background: none;
@@ -178,11 +184,5 @@
 }
 
 
-.hidden {
-  display: none;
-}
 
-.visuallyhidden {
-  opacity: 0;
-}
 

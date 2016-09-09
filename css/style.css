@@ -1059,6 +1059,15 @@ body:before {
 }
 .nav-tabs {
   border-bottom: none;
+  position: absolute;
+  bottom: 5%;
+  left: 21%;
+}
+@media (max-width: 991px) {
+  .nav-tabs {
+    position: relative;
+    left: inherit;
+  }
 }
 .nav > li > a:hover {
   background: none;
@@ -1067,10 +1076,4 @@ body:before {
 .tab-content {
   position: relative;
   overflow-x: hidden;
-}
-.hidden {
-  display: none;
-}
-.visuallyhidden {
-  opacity: 0;
 }
