@@ -1,3 +1,4 @@
+//Owl Slider ini-tabes
 $(document).ready(function () {
 
     initialize_owl($('#owl1'));
@@ -23,16 +24,18 @@ $(document).ready(function () {
 
 
 });
-//Owl Slider 
 
+//Owl general
 function initialize_owl(el) {
     el.owlCarousel({
         loop: true,
         margin: 10,
         responsiveClass: true,
         navigation: true,
+        responsiveBaseWidth: window,
         navigationText:	["<i class='fa-left fa-icon'></i>",
             "<i class='fa-right fa-icon'></i>"],
+       
         responsive: {
             0: {
                 items: 1,
@@ -51,14 +54,12 @@ function initialize_owl(el) {
     });
     $("#owl3").owlCarousel({
         items:4,
-        itemsDesktop : [1200,3],
-        itemsTablet : [600,2],
-        itemsMobile : [479,1]
+        navigation: true,
+        navigationText:	["<i class='fa-left fa-icon'></i>",
+            "<i class='fa-right fa-icon'></i>"]
     });
   
 }
-
-
 
 function destroy_owl(el) {
     el.data('owlCarousel').destroy();
@@ -81,10 +82,14 @@ function destroy_owl(el) {
     }
 });
 $(window).resize();*/
+
 //скрытие элементов
 $('.btn-leader').click(function(){
     $(".walk__wrapper").css("display", "none");
+
     $(".tab-content #leader").css("display", "block");
+    $(".tab-content #leader").addClass('animated slideInRight');
+
     $(".tabs-header__logo").css("display", "block");
     $(".tab-content #n-leader").css("display", "none");
     $(".tab-content #mil").css("display", "none");
@@ -93,6 +98,9 @@ $('.btn-leader').click(function(){
 $('.btn-n-leader').click(function(){
     $(".walk__wrapper").css("display", "none");
     $(".tab-content #n-leader").css("display", "block");
+
+    $(".tab-content #n-leader").addClass('animated slideInRight');
+
     $(".tabs-header__logo").css("display", "block");
     $(".tab-content #leader").css("display", "none");
     $(".tab-content #mil").css("display", "none");
@@ -101,6 +109,7 @@ $('.btn-n-leader').click(function(){
 $('.btn-mil').click(function(){
     $(".walk__wrapper").css("display", "none");
     $(".tab-content #mil").css("display", "block");
+    $(".tab-content #mil").addClass('animated slideInRight');
     $(".tabs-header__logo").css("display", "block");
     $(".tab-content #leader").css("display", "none");
     $(".tab-content #n-leader").css("display", "none");
@@ -117,7 +126,7 @@ $('.tabs-header__logo-title').click(function(){
     $(".nav-tabs li").removeClass("active");
     
 });
-
+//opasity btn
 $(".nav-tabs").on("click", "li", function(){
 
     $(".nav-tabs li").addClass("opacity_li");

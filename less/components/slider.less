@@ -65,6 +65,7 @@
 
 }
 #leader, #n-leader{
+
   @media (min-width: 1000px) and (max-width: 1500px) {
     margin-top: 70px;
   }
@@ -84,7 +85,7 @@
   -webkit-box-reflect: below -39px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(78%, transparent), to(fade(@yellow, 28%)));
 }
 #mil{
-  margin-bottom: -30px;
+
   @media(min-width:1000px) and (max-width: 1500px){
     margin-bottom: 0;
   }
@@ -117,3 +118,10 @@
     background-size: contain;
   }
 }
+.animOut{
+  animation: test2 1s ease 0s 1 both;
+}
+@keyframes test2 {
+   0%{ transform: translateX(500%);}
+   100%{transform: translateX(0%);}
+ }
