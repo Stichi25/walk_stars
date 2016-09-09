@@ -790,6 +790,7 @@ body:before {
   padding-top: 32px;
   position: relative;
   overflow: hidden;
+  transition: all 500ms linear;
 }
 .walk {
   border-bottom: 1px solid #cd91e5;
@@ -1005,7 +1006,9 @@ body:before {
     background-size: contain;
   }
 }
-.effect {
-  opacity: 0;
+.hidden {
   display: none;
+}
+.visuallyhidden {
+  opacity: 0;
 }

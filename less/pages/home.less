@@ -73,7 +73,7 @@
   padding-top: 32px;
   position: relative;
   overflow: hidden;
-
+  transition:all 500ms linear;
 
 }//.walk__wrapper
 
@@ -84,6 +84,7 @@
   padding-top:50px;
   padding-bottom: 65px;
   text-align: center;
+
   @media (max-width: 1500px){
     padding-top: 19px;
     padding-bottom: 35px;
@@ -282,7 +283,11 @@
 }
 
 
-.effect{
- opacity:0;
+.hidden {
   display: none;
 }
+
+.visuallyhidden {
+  opacity: 0;
+}
+

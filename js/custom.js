@@ -52,6 +52,7 @@ function initialize_owl(el) {
         itemsTablet : [600,2],
         itemsMobile : [479,1]
     });
+  
 }
 
 function destroy_owl(el) {
