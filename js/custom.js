@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    initialize_owl($('#owl1'));
 
+    initialize_owl($('#owl1'));
     $('a[href="#leader"]').on('shown.bs.tab', function () {
         initialize_owl($('#owl1'));
     }).on('hide.bs.tab', function () {
@@ -58,7 +58,24 @@ function initialize_owl(el) {
 function destroy_owl(el) {
     el.data('owlCarousel').destroy();
 }
+/*$(window).resize(function(){
+    var width = $(window).width();
+    if (width>991){
+        $('.carousel').carousel({
+            interval : false
+        });
+        $('.carousel div.item:first-child').addClass("active");
 
+    }
+    else if((width<991)){
+        $('.carousel div.item').removeClass("active");
+        $('.item').css("display", "block");
+    }
+    else{
+
+    }
+});
+$(window).resize();*/
 //скрытие элементов
 $('.btn-leader').click(function(){
     $(".walk__wrapper").css("display", "none");
@@ -91,6 +108,13 @@ $('.tabs-header__logo-title').click(function(){
     $(".tabs-header__logo").css("display", "none");
     $(".tab-content #leader").css("display", "none");
     $(".tab-content #n-leader").css("display", "none");
+    $(".nav-tabs li").removeClass("opacity_li");
+    $(".nav-tabs li").removeClass("active");
     
 });
 
+$(".nav-tabs").on("click", "li", function(){
+
+    $(".nav-tabs li").addClass("opacity_li");
+    $(this).removeClass("opacity_li");
+});

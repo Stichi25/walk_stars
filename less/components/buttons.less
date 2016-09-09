@@ -91,7 +91,7 @@
 .btn-mil{
   background:#380915;
   border-bottom: 1px solid #7C2D4B!important;
-  .bg-gradient-linear-btn(#7A1C36 0%,  #7B1C37 3%, #7B1C41 16%, #29050E 50%);
+  .bg-gradient-linear-btn(#7A1C36 0%,  #7B1C37 3%, #771239 16%, #29050E 50%);
   &:before{
     content: "";
     position: absolute;
@@ -107,18 +107,28 @@
     background-image: -o-linear-gradient(#E43D6D, #5D1327);
   }
   &:hover,  &:focus, &:active{
-    .bg-gradient-linear-btn(#7A1C36 0%,  #7B1C37 3%, #7B1C41 16%, #29050E 50%)!important;
+    .bg-gradient-linear-btn(#7A1C36 0%,  #7B1C37 3%, #771239 16%, #29050E 50%)!important;
   }
 }//.btn-mil
 
 
   .nav-tabs>li.active>a.btn-leader{
-    .box-shadow(0px -8px 61px 0 #ED0066);
+    box-shadow:0px -17px 35px -14px #ED0066, 1px -20px 167px 11px #ED0066, 0px 12px 24px -12px #ED0066;
    }
+.nav-tabs>li.active>a.btn-n-leader{
+  box-shadow:0px -17px 35px -14px #F38F00, 1px -20px 167px 11px #F38F00, 0px 12px 24px -12px #F38F00;
+}
+.nav-tabs>li.active>a.btn-mil{
+  box-shadow:0px -17px 35px -14px #DD00E1, 1px -20px 167px 11px #DD00E1, 0px 12px 24px -12px #DD00E1;
+}
+
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
   border: none;
   color: @yellow;
 
+}
+.opacity_li{
+  opacity: 0.65;
 }
 //стили бутстрапа
 .nav-tabs>li>a{

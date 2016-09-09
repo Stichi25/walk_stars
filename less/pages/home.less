@@ -141,32 +141,17 @@
 }
 
 //tabs
-.owl-carousel__content{
-
-  .rounded-x{
-    position: relative;
-    /*background:url(../img/border-img.png) ;
-    background-size: cover;
-    background-position: -24px -42px;
-    height: 305px;*/
-    /*img{
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      z-index: -1;
-     /* position: absolute;
-      left: 36px;
-      top: 10px;*/
-
-   /* }
-    img:before{
-
-      border-width: 10px;
-      border-style: solid;
-      border-image: url(../img/border-img.png) 30 round;
-    }*/
-
+.tab-content{
+  position: relative;
+  .col-md-2 {
+    width: 20%;
+    padding-left: 0;
+    padding-right: 0;
   }
+}
+.owl-carousel__content{
+  text-align: center;
+
   h3{
     color: @white;
     font-size: 18px;
@@ -181,44 +166,44 @@
 }
 
 .owl-carousel__content-img {
-  border: 25px solid transparent;
-  border-image-source: url(../img/border-img.png);
-  border-image-repeat: round;
-  border-image-slice: 26 fill;
-  .border-radius(50%);
   width: 70%;
-
-  /*width: 252px;
-  height: 252px;*/
-  overflow: hidden;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  @media(min-width:1000px) and (max-width: 1500px){
-    width: 74%;
-    border: 19px solid transparent;
-    border-image-source: url(../img/border-img.png);
-    border-image-repeat: round;
-    border-image-slice: 26 fill;
-  }
   img{
     width: 100%;
+    display: block;
+    height: auto;
+  }
+  a{
+    border-radius: 50%;
+    width: 100%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+
+  }
+  .icon{
+    background: url(../img/border-img.png) no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    top: 0;
+    left: 0;
+    background-size: cover;
   }
 
 }
+
 .owl-carousel__content-bg{
   display: inline-block;
   background: url(../img/border-img-mask.png) no-repeat;
-  background-position: 20px -3px;
-  height: 0;
-  padding-bottom: 76%;
-  background-size: 90%;
-  @media(min-width:1000px) and (max-width: 1500px){
-    padding-bottom: 88%;
-    background-size: 100%;
-    background-position: inherit;
-  }
-  -webkit-box-reflect: below -34px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(78%, transparent), to(fade(@yellow, 28%)));
+  background-position: 42px -19px;
+  padding: 20px;
+  background-size: contain;
+  -webkit-box-reflect: below -39px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(78%, transparent), to(fade(@yellow, 28%)));
 }
 #mil{
   margin-bottom: -30px;
@@ -230,29 +215,12 @@
   }
 }
 #mil .owl-carousel__content-bg{
-  background: url(../img/zv4KM.png) no-repeat;
-  background-size: 96%;
-  height: 0;
-  padding-bottom: 70%;
-  @media(min-width:1000px) and (max-width: 1500px){
-    background-size: 82%;
-    background-position: 30px;
-    padding-bottom: 80%;
-  }
+  background: url(../img/bg_KM.png) no-repeat;
+  background-size: contain;
+  padding-bottom: 8%;
   .owl-carousel__content-img{
-    width: 62%;
-    margin-top: 70px;
-    @media(min-width:1000px) and (max-width: 1500px){
-      width: 55%;
-      margin-top: 61px;
-    }
-    /*@media (max-width: 1000px){
-      border-image-slice: 24 fill;
-      border: 19px solid transparent;
-    }*/
+    margin-top: 50px;
   }
-
-
 }
 .owl-carousel .owl-item {
   text-align: center;
