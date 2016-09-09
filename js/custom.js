@@ -30,6 +30,9 @@ function initialize_owl(el) {
         loop: true,
         margin: 10,
         responsiveClass: true,
+        navigation: true,
+        navigationText:	["<i class='fa-left fa-icon'></i>",
+            "<i class='fa-right fa-icon'></i>"],
         responsive: {
             0: {
                 items: 1,
@@ -54,6 +57,8 @@ function initialize_owl(el) {
     });
   
 }
+
+
 
 function destroy_owl(el) {
     el.data('owlCarousel').destroy();
