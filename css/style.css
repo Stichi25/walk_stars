@@ -40,6 +40,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-color: #5B2171;
   overflow-x: hidden;
 }
 body:before {
@@ -881,10 +882,8 @@ body:before {
     width: 50px;
   }
 }
-@media (max-width: 767px) {
-  .owl-carousel {
-    display: block;
-  }
+.owl-carousel.off {
+  display: block;
 }
 .header {
   position: relative;
