@@ -80,6 +80,7 @@
   }
   &:hover,  &:focus, &:active{
     .bg-gradient-linear-btn(#FF0708 0%,  #C60303 3%, #890202 16%, #5E0101 50%)!important;
+    .box-shadow-four(0px -17px 35px -14px #ED0066, 1px 6px 53px -19px #ED0066, 2px -44px 49px -21px #ED0066, 0px 12px 24px -12px #ED0066);
   }
 
 }//.btn-leader
@@ -100,7 +101,9 @@
     .bg-image-color(#FFF1C2,#FF8905);
   }
   &:hover,  &:focus, &:active{
+
     .bg-gradient-linear-btn(#FFA00E 0%,  #C66500 3%, #AB5500 16%, #964B00 50%)!important;
+    .box-shadow-four(0px -17px 35px -14px #F38F00, 1px 6px 53px -19px #F38F00, 2px -44px 49px -21px #F38F00, 0px 12px 24px -12px #F38F00);
   }
 
 }//.btn-n-leader
@@ -122,7 +125,9 @@
 
   }
   &:hover,  &:focus, &:active{
+
     .bg-gradient-linear-btn(#7A1C36 0%,  #7B1C37 3%, #771239 16%, #29050E 50%)!important;
+    .box-shadow-four(0px -17px 35px -14px #DD00E1, 1px 6px 53px -19px #DD00E1, 2px -44px 49px -21px #DD00E1, 0px 12px 24px -12px #DD00E1);
   }
 }//.btn-mil
 
@@ -143,8 +148,12 @@
   color: @yellow;
 
 }
+.opacity_li:hover{
+  opacity: 1!important;
+}
 .opacity_li{
   opacity: 0.65;
+  .transition();
 }
 //стили бутстрапа
 .nav-tabs>li>a{

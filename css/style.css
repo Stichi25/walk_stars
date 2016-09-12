@@ -28,6 +28,10 @@
   font-weight: normal;
   font-style: normal;
 }
+html,
+body {
+  height: 100%;
+}
 body {
   font-family: 'Glober Regular', Arial, sans-serif;
   font-size: 14px;
@@ -36,6 +40,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 body:before {
   position: fixed;
@@ -49,28 +54,44 @@ body:before {
   bottom: 0;
 }
 .wrapper {
-  /* display: table;*/
+  display: table;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   min-height: 100%;
-  /*max-width: 1920px;*/
 }
-.con-h {
-  /*display: table-cell;*/
-  /* height: 100%;
-  overflow: hidden;
+.wrapper .wrapper-inner {
+  display: table-cell;
+  vertical-align: middle;
   position: relative;
-  @media (max-width: 1024px){
-    height: auto;
-  }*/
-  /* @media (min-width: 1024px){
-    vertical-align: middle;
-  }*/
+}
+.tab-content {
+  width: 100vw;
 }
 .tab-content #leader,
 .tab-content #n-leader,
 .tab-content #mil {
   display: none;
+}
+.cover-container {
+  width: 100%;
+  padding-top: 40px;
+}
+@media (min-width: 991px) and (max-width: 1500px) {
+  .cover-container {
+    padding-top: 60px;
+  }
+}
+.masthead {
+  max-width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .masthead {
+    position: relative;
+  }
 }
 .btn {
   font-family: 'Glober Bold', Arial, sans-serif;
@@ -234,6 +255,9 @@ body:before {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(177deg, #FF0708 0%, #C60303 3%, #890202 16%, #5E0101 50%) !important;
   /* Standard syntax */
+  -webkit-box-shadow: 0px -17px 35px -14px #ED0066, 1px 6px 53px -19px #ED0066, 2px -44px 49px -21px #ED0066, 0px 12px 24px -12px #ED0066;
+  -moz-box-shadow: 0px -17px 35px -14px #ED0066, 1px 6px 53px -19px #ED0066, 2px -44px 49px -21px #ED0066, 0px 12px 24px -12px #ED0066;
+  box-shadow: 0px -17px 35px -14px #ED0066, 1px 6px 53px -19px #ED0066, 2px -44px 49px -21px #ED0066, 0px 12px 24px -12px #ED0066;
 }
 .btn-n-leader {
   background: #ffc36e;
@@ -272,6 +296,9 @@ body:before {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(177deg, #FFA00E 0%, #C66500 3%, #AB5500 16%, #964B00 50%) !important;
   /* Standard syntax */
+  -webkit-box-shadow: 0px -17px 35px -14px #F38F00, 1px 6px 53px -19px #F38F00, 2px -44px 49px -21px #F38F00, 0px 12px 24px -12px #F38F00;
+  -moz-box-shadow: 0px -17px 35px -14px #F38F00, 1px 6px 53px -19px #F38F00, 2px -44px 49px -21px #F38F00, 0px 12px 24px -12px #F38F00;
+  box-shadow: 0px -17px 35px -14px #F38F00, 1px 6px 53px -19px #F38F00, 2px -44px 49px -21px #F38F00, 0px 12px 24px -12px #F38F00;
 }
 .btn-mil {
   background: #380915;
@@ -310,6 +337,9 @@ body:before {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(177deg, #7A1C36 0%, #7B1C37 3%, #771239 16%, #29050E 50%) !important;
   /* Standard syntax */
+  -webkit-box-shadow: 0px -17px 35px -14px #DD00E1, 1px 6px 53px -19px #DD00E1, 2px -44px 49px -21px #DD00E1, 0px 12px 24px -12px #DD00E1;
+  -moz-box-shadow: 0px -17px 35px -14px #DD00E1, 1px 6px 53px -19px #DD00E1, 2px -44px 49px -21px #DD00E1, 0px 12px 24px -12px #DD00E1;
+  box-shadow: 0px -17px 35px -14px #DD00E1, 1px 6px 53px -19px #DD00E1, 2px -44px 49px -21px #DD00E1, 0px 12px 24px -12px #DD00E1;
 }
 .nav-tabs > li.active > a.btn-leader {
   -webkit-box-shadow: 0px -17px 35px -14px #ED0066, 1px 6px 53px -19px #ED0066, 2px -44px 49px -21px #ED0066, 0px 12px 24px -12px #ED0066;
@@ -332,8 +362,12 @@ body:before {
   border: none;
   color: #ffc36e;
 }
+.opacity_li:hover {
+  opacity: 1!important;
+}
 .opacity_li {
   opacity: 0.65;
+  transition: all 0.3s ease-in-out;
 }
 .nav-tabs > li > a {
   border: none;
@@ -359,12 +393,15 @@ body:before {
     margin-top: 100px;
   }
 }
-.modal-lider .modal-lg {
+.fade.in {
+  background: rgba(0, 0, 10, 0.7);
+}
+.modal-lg {
   max-width: 1115px ;
   width: 100%;
 }
 @media (min-width: 992px) and (max-width: 1500px) {
-  .modal-lider .modal-lg {
+  .modal-lg {
     width: 900px;
   }
 }
@@ -438,14 +475,13 @@ body:before {
   height: 100%;
   overflow: hidden;
   max-width: 450px;
-  margin-right: -15px;
+  margin-right: -16px;
   background: url(../img/img_avatar_m.jpg) no-repeat;
   background-size: cover;
 }
 @media (max-width: 991px) {
   .modal-lider .modal-body__img {
     max-width: 269px;
-    background-size: contain;
     background-position: center;
     min-height: 342px;
     height: auto;
@@ -456,38 +492,42 @@ body:before {
 }
 @media (max-width: 767px) {
   .modal-lider .modal-body__img {
-    margin-left: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
   }
 }
 .modal-lider .modal-body__content {
   margin-top: 67px;
-  padding-bottom: 21px;
+  padding-bottom: 26%;
   margin-left: 43px;
 }
 @media (max-width: 991px) {
   .modal-lider .modal-body__content {
     margin-left: 13px;
+    padding-bottom: 5%;
   }
 }
 .modal-lider .modal-body__content h3 {
   font-family: 'Glober Bold', Arial, sans-serif;
   margin-bottom: 0;
   line-height: 22px;
-  font-size: 25px;
+  font-size: 20px;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .modal-lider .modal-body__content h3 {
-    font-size: 20px;
+    text-align: center;
   }
 }
 .modal-lider .modal-body__content span {
   font-family: 'Glober Regular', Arial, sans-serif;
   font-style: italic;
-  font-size: 25px;
+  font-size: 17px;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .modal-lider .modal-body__content span {
-    font-size: 17px;
+    text-align: center;
+    display: block;
   }
 }
 .modal-lider .modal-body__content .modal-body__content-text {
@@ -499,44 +539,28 @@ body:before {
     margin-top: 25px;
   }
 }
-.modal-lider .modal-body__content .modal-body__content-text p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-@media (max-width: 991px) {
-  .modal-lider .modal-body__content .modal-body__content-text p {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-}
-.modal-mil .modal-lg {
-  max-width: 1324px ;
-  width: 100%;
-}
-@media (min-width: 992px) and (max-width: 1500px) {
-  .modal-mil .modal-lg {
-    width: 900px;
-  }
-}
 .modal-mil .modal-body {
   position: relative;
 }
 .modal-mil .modal-body:before {
   position: absolute;
   content: '';
-  left: -11%;
-  top: -134px;
-  height: 385px;
+  left: -14.5%;
+  top: -146px;
+  height: 415px;
   width: 437px;
-  background: url(../img/zv4KM.png) no-repeat;
+  background-image: url('../img/zv4KM.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media (max-width: 1500px) {
   .modal-mil .modal-body:before {
     background-size: contain;
-    width: 241px;
-    left: -9%;
-    top: -66px;
-    height: 203px;
+    width: 289px;
+    left: -14%;
+    top: -89px;
+    height: 275px;
   }
 }
 @media (max-width: 991px) {
@@ -579,20 +603,20 @@ body:before {
 .modal-mil .modal-body__wrapper:after {
   position: absolute;
   content: '';
-  right: -10%;
-  bottom: -18%;
-  height: 425px;
-  width: 396px;
+  right: -14.5%;
+  bottom: -21%;
+  height: 464px;
+  width: 440px;
   background: url(../img/zvKM.png) no-repeat;
-  background-size: 100%;
+  background-size: contain;
 }
 @media (max-width: 1500px) {
   .modal-mil .modal-body__wrapper:after {
     background-size: contain;
-    right: -16%;
-    bottom: -6%;
-    height: 199px;
-    width: 290px;
+    right: -13%;
+    bottom: -22%;
+    height: 382px;
+    width: 333px;
   }
 }
 @media (max-width: 991px) {
@@ -602,30 +626,31 @@ body:before {
 }
 .modal-mil .modal-body__img {
   width: auto;
-  height: 100%;
   overflow: hidden;
   border: 20px solid #fff;
   margin-left: -15px;
   max-width: 450px;
   background: url(../img/img_avatar_m.jpg) no-repeat;
   background-size: cover;
+  height: 100%;
 }
 @media (max-width: 991px) {
   .modal-mil .modal-body__img {
     max-width: 269px;
-    background-size: contain;
-    background-position: center;
     min-height: 342px;
   }
 }
 @media (max-width: 767px) {
   .modal-mil .modal-body__img {
-    margin-left: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
   }
 }
 .modal-mil .modal-body__content {
   margin-left: 35px;
   margin-top: 67px;
+  padding-bottom: 12%;
 }
 @media (max-width: 991px) {
   .modal-mil .modal-body__content {
@@ -633,51 +658,46 @@ body:before {
     margin-top: 50px;
   }
 }
+@media (max-width: 767px) {
+  .modal-mil .modal-body__content {
+    padding-bottom: 4%;
+  }
+}
 .modal-mil .modal-body__content h3 {
   font-family: 'Glober Bold', Arial, sans-serif;
   margin-bottom: 0;
   line-height: 22px;
-  font-size: 40px;
+  font-size: 20px;
 }
-@media (min-width: 992px) and (max-width: 1500px) {
+@media (max-width: 767px) {
   .modal-mil .modal-body__content h3 {
-    font-size: 30px;
-  }
-}
-@media (max-width: 991px) {
-  .modal-mil .modal-body__content h3 {
-    line-height: 18px;
-    font-size: 26px;
+    text-align: center;
   }
 }
 .modal-mil .modal-body__content span {
   font-family: 'Glober Regular', Arial, sans-serif;
   font-style: italic;
-  font-size: 30px;
+  font-size: 17px;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .modal-mil .modal-body__content span {
-    font-size: 17px;
+    text-align: center;
+    display: block;
   }
 }
 .modal-mil .modal-body__content .modal-body__content-text {
   margin-top: 55px;
-  padding-bottom: 28%;
+  padding-bottom: 22%;
 }
 @media (max-width: 991px) {
   .modal-mil .modal-body__content .modal-body__content-text {
     margin-top: 13px;
-    padding-bottom: 9%;
+    padding-bottom: 4%;
   }
 }
-.modal-mil .modal-body__content .modal-body__content-text p {
-  font-size: 17px;
-  margin-bottom: 20px;
-}
-@media (max-width: 991px) {
-  .modal-mil .modal-body__content .modal-body__content-text p {
-    font-size: 14px;
-    margin-bottom: 10px;
+@media (max-width: 767px) {
+  .modal-mil .modal-body__content .modal-body__content-text {
+    padding-bottom: 1%;
   }
 }
 .close {
@@ -771,7 +791,7 @@ body:before {
 }
 .owl-carousel__content h3 {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   font-family: 'Glober Regular', Arial, sans-serif;
   font-weight: lighter;
@@ -847,10 +867,11 @@ body:before {
   display: inline-block;
 }
 .owl-carousel__content-flag {
-  height: 56px;
-  width: 80px;
+  height: 35px;
+  width: 70px;
   background: url(../img/rs.png) no-repeat center;
   display: inline-block;
+  background-size: contain;
   margin-left: auto;
   margin-right: auto;
 }
@@ -858,14 +879,18 @@ body:before {
   .owl-carousel__content-flag {
     height: 24px;
     width: 50px;
-    background-size: contain;
+  }
+}
+@media (max-width: 767px) {
+  .owl-carousel {
+    display: block;
   }
 }
 .header {
   position: relative;
 }
 .home-header__logo {
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 @media (min-width: 1000px) and (max-width: 1500px) {
@@ -874,17 +899,17 @@ body:before {
   }
 }
 .header__logo-title {
-  padding-top: 225px;
+  padding-top: 200px;
   height: 0;
   overflow: hidden;
   background-image: url('../img/logo.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-size: inherit;
+  background-size: contain;
   margin: 0;
 }
-@media (min-width: 1000px) and (max-width: 1500px) {
+@media (min-width: 991px) and (max-width: 1600px) {
   .header__logo-title {
     background-size: contain;
     padding-top: 142px;
@@ -949,14 +974,19 @@ body:before {
   padding-bottom: 32px;
   padding-top: 32px;
   position: absolute;
-  left: 0;
-  right: 0;
+  width: 100%;
+  top: 30%;
   overflow: hidden;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
   opacity: 1;
+}
+@media (max-width: 767px) {
+  .walk__wrapper {
+    position: relative;
+  }
 }
 .walk {
   border-bottom: 1px solid #cd91e5;
@@ -1057,15 +1087,29 @@ body:before {
   border-bottom: none;
 }
 .fixed__nav-tabs {
-  position: absolute;
+  /*position: absolute;
   bottom: 2.5%;
   left: 0;
   right: 0;
+  @media (max-width: 767px){
+    bottom: 0;
+    top: 80%;
+  }*/
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 @media (max-width: 767px) {
   .fixed__nav-tabs {
-    bottom: 0;
-    top: 80%;
+    position: relative;
+  }
+}
+.fixed__nav-tabs .inner {
+  padding: 30px 0 60px 0;
+}
+@media (min-width: 991px) and (max-width: 1500px) {
+  .fixed__nav-tabs .inner {
+    padding: 30px 0;
   }
 }
 .nav > li > a:hover {
@@ -1075,7 +1119,14 @@ body:before {
 .tab-content {
   position: relative;
   overflow-x: hidden;
+  /*padding-top: 40px;*/
+  z-index: 5;
 }
 .opaque {
   opacity: 0;
+}
+@media (max-width: 767px) {
+  .opaque {
+    display: none;
+  }
 }

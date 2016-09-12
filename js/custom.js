@@ -1,77 +1,82 @@
 //Owl Slider ini-tabes
-$(window).resize(function(){
-$(document).ready(function () {
 
-    initialize_owl($('#owl1'));
-    $('a[href="#leader"]').on('shown.bs.tab', function () {
-        initialize_owl($('#owl1'));
-    }).on('hide.bs.tab', function () {
-        destroy_owl($('#owl1'));
-    });
+    var window_size = $(window).width();
+    if(window_size <= 767) {
 
-    $('a[href="#n-leader"]').on('shown.bs.tab', function () {
-        initialize_owl($('#owl2'));
-    }).on('hide.bs.tab', function () {
-        destroy_owl($('#owl2'));
-    });
+    }
+    else {
 
-    $('a[href="#mil"]').on('shown.bs.tab', function () {
-        initialize_owl($('#owl3'));
+        $(document).ready(function () {
 
-    }).on('hide.bs.tab', function () {
-        destroy_owl($('#owl3'));
+            initialize_owl($('#owl1'));
+            $('a[href="#leader"]').on('shown.bs.tab', function () {
+                initialize_owl($('#owl1'));
+            }).on('hide.bs.tab', function () {
+                destroy_owl($('#owl1'));
+            });
 
-    });
+            $('a[href="#n-leader"]').on('shown.bs.tab', function () {
+                initialize_owl($('#owl2'));
+            }).on('hide.bs.tab', function () {
+                destroy_owl($('#owl2'));
+            });
+
+            $('a[href="#mil"]').on('shown.bs.tab', function () {
+                initialize_owl($('#owl3'));
+
+            }).on('hide.bs.tab', function () {
+                destroy_owl($('#owl3'));
+
+            });
 
 
-});
+        });
 
 //Owl general
-function initialize_owl(el) {
-    el.owlCarousel({
-        loop: true,
-        margin: 10,
-        responsiveClass: true,
-        navigation: true,
-        navigationText:	["<i class='fa-left fa-icon'></i>",
-            "<i class='fa-right fa-icon'></i>"],
-       
-        responsive: {
-            0: {
-                items: 1,
-                nav: true
-            },
-            600: {
-                items: 1,
-                nav: false
-            },
-            1000: {
-                items: 1,
-                nav: true,
-                loop: false
-            }
-        }
-    });
-    $("#owl3").owlCarousel({
-        items:4,
-        navigation: true,
-        navigationText:	["<i class='fa-left fa-icon'></i>",
-            "<i class='fa-right fa-icon'></i>"]
-    });
-  
-}
+        function initialize_owl(el) {
+            el.owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                navigation: true,
+                responsiveRefreshRate:50,
+                navigationText:	["<i class='fa-left fa-icon'></i>",
+                    "<i class='fa-right fa-icon'></i>"],
 
-function destroy_owl(el) {
-    el.data('owlCarousel').destroy();
-}
-});
-$(window).resize();
+            });
+            $("#owl3").owlCarousel({
+                items:4,
+                navigation: true,
+                navigationText:	["<i class='fa-left fa-icon'></i>",
+                    "<i class='fa-right fa-icon'></i>"]
+            });
+
+        }
+
+        function destroy_owl(el) {
+            el.data('owlCarousel').destroy();
+        }
+        $('.btn-leader').click(function(){
+            $(".tab-content #leader").addClass('animated slideInRight');
+        });
+        $('.btn-n-leader').click(function(){
+            $(".tab-content #n-leader").addClass('animated slideInRight');
+        });
+        $('.btn-mil').click(function(){
+            $(".tab-content #mil").addClass('animated slideInRight');
+        });
+
+    }
+
+
+
+
 
 //скрытие элементов
 $('.btn-leader').click(function(){
     $(".walk__wrapper").addClass("opaque");
     $(".tab-content #leader").css("display", "block");
-    $(".tab-content #leader").addClass('animated slideInRight');
+
     $(".tabs-header__logo").css("display", "block");
     $(".tab-content #n-leader").css("display", "none");
     $(".tab-content #mil").css("display", "none");
@@ -81,7 +86,7 @@ $('.btn-n-leader').click(function(){
     $(".walk__wrapper").addClass("opaque");
     $(".tab-content #n-leader").css("display", "block");
 
-    $(".tab-content #n-leader").addClass('animated slideInRight');
+
 
     $(".tabs-header__logo").css("display", "block");
     $(".tab-content #leader").css("display", "none");
@@ -91,7 +96,7 @@ $('.btn-n-leader').click(function(){
 $('.btn-mil').click(function(){
     $(".walk__wrapper").addClass("opaque");
     $(".tab-content #mil").css("display", "block");
-    $(".tab-content #mil").addClass('animated slideInRight');
+
     $(".tabs-header__logo").css("display", "block");
 
     $(".tab-content #leader").css("display", "none");

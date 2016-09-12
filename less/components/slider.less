@@ -22,7 +22,7 @@
 
   h3{
     color: @white;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     font-family: @clober-regular;
     font-weight: lighter;
@@ -105,15 +105,21 @@
   display: inline-block;
 }
 .owl-carousel__content-flag{
-  height: 56px;
-  width: 80px;
+  height: 35px;
+  width: 70px;
   background: url(../img/rs.png) no-repeat center;
   display: inline-block;
+  background-size: contain;
   margin-left: auto;
   margin-right: auto;
   @media(min-width:1000px) and (max-width: 1500px){
     height: 24px;
     width: 50px;
-    background-size: contain;
+
+  }
+}
+.owl-carousel{
+  @media(max-width: 767px){
+    display: block;
   }
 }
