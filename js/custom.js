@@ -19,7 +19,7 @@ jQuery(document).ready(function () {
                  navigationText:	["<i class='fa-left fa-icon'></i>",
                      "<i class='fa-right fa-icon'></i>"]
              };
-         owl.removeClass('off');
+
          $("#owl3").owlCarousel({
              items:4,
              navigation: true,
@@ -36,14 +36,13 @@ jQuery(document).ready(function () {
          $('.btn-mil').click(function(){
              $(".tab-content #mil").addClass('animated slideInRight');
          });
+         owl.removeClass('off');
 
      }
-     else {
+     else if(checkWidth <=767) {
          owl.addClass('off');
+
      }
-
-
-
    }
     $(document).ready(mobile);
     $(window).resize(mobile);
