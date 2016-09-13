@@ -1,6 +1,125 @@
-
-
 jQuery(document).ready(function () {
+
+    function mobile() {
+        var checkWidth = $(window).width();
+        var demo = $(".owl-carousel");
+        if (checkWidth >= 768) {
+
+            $(document).ready(function () {
+
+                $('a[href="#leader"]').on('shown.bs.tab', function () {
+                    initialize_owl($('#owl1'));
+                }).on('hide.bs.tab', function () {
+                    destroy_owl($('#owl1'));
+                });
+
+                $('a[href="#n-leader"]').on('shown.bs.tab', function () {
+                    initialize_owl($('#owl2'));
+                }).on('hide.bs.tab', function () {
+                    destroy_owl($('#owl2'));
+                });
+
+                $('a[href="#mil"]').on('shown.bs.tab', function () {
+                    initialize_owl1($('#owl3'));
+                }).on('hide.bs.tab', function () {
+                    destroy_owl1($('#owl3'));
+                });
+
+            });
+
+            function initialize_owl(el) {
+                el.owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    items : 5,
+                    responsiveRefreshRate:50,
+                    responsiveBaseWidth: window,
+                    responsiveClass: true,
+                    smartSpeed: 900,
+                    paginationSpeed : 800,
+                    rewindSpeed : 1000,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: true
+                        },
+                        768: {
+                            items: 3,
+                            nav: true
+                        },
+                        1023: {
+                            items: 5,
+                            nav: true
+
+                        }
+                    },
+                    dots: false,
+                    nav: true,
+                    navText:["<i class='fa-left fa-icon'></i>",
+                        "<i class='fa-right fa-icon'></i>"]
+
+
+                });
+            }
+
+            function destroy_owl(el) {
+                el.data('owlCarousel').destroy();
+            }
+            function initialize_owl1(el) {
+
+                el.owlCarousel({
+                    loop: false,
+                    margin: 10,
+                    items : 4,
+                    responsiveRefreshRate:50,
+                    smartSpeed: 700,
+                    nav: false,
+                    navText:["<i class='fa-left fa-icon'></i>",
+                        "<i class='fa-right fa-icon'></i>"],
+                    responsiveClass: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: true
+                        },
+                        768: {
+                            items: 2,
+                            nav: true
+                        },
+                        1023: {
+                            items: 4
+                        }
+                    },
+                    dots: false
+                });
+            }
+// Custom Navigation Events
+
+
+            function destroy_owl1(el) {
+                el.data('owlCarousel').destroy();
+            }
+            $('.btn-leader').click(function(){
+                $(".tab-content #leader").addClass('animated slideInRight');
+            });
+            $('.btn-n-leader').click(function(){
+                $(".tab-content #n-leader").addClass('animated slideInRight');
+            });
+            $('.btn-mil').click(function(){
+                $(".tab-content #mil").addClass('animated slideInRight');
+            });
+            demo.removeClass('off');
+
+        } else if (checkWidth < 767) {
+            demo.addClass('off');
+        }
+    }
+
+    $(document).ready(mobile);
+    $(window).resize(mobile);
+});
+
+/*jQuery(document).ready(function () {
 
     function mobile() {
         var checkWidth = $(window).width();
@@ -9,12 +128,9 @@ jQuery(document).ready(function () {
      if ( checkWidth >=768 ) {
 
              owlOptions = {
-                 loop: true,
+                 rewindSpeed :30,
                  margin: 10,
-                 responsiveClass: true,
                  navigation: true,
-                 mouseDrag:false,
-                 touchDrag:false,
                  responsiveRefreshRate:50,
                  navigationText:	["<i class='fa-left fa-icon'></i>",
                      "<i class='fa-right fa-icon'></i>"]
@@ -46,42 +162,34 @@ jQuery(document).ready(function () {
    }
     $(document).ready(mobile);
     $(window).resize(mobile);
-});
+});*/
 
 //скрытие элементов
 $('.btn-leader').click(function(){
     $(".walk__wrapper").addClass("opaque");
-    $(".tab-content #leader").css("display", "block");
+    $(".tab-content ").css("display", "block");
     $(".tabs-header__logo").css("display", "block");
-    $(".tab-content #n-leader").css("display", "none");
-    $(".tab-content #mil").css("display", "none");
     $(".home-header__logo").css("display", "none");
 });
 $('.btn-n-leader').click(function(){
     $(".walk__wrapper").addClass("opaque");
-    $(".tab-content #n-leader").css("display", "block");
+    $(".tab-content ").css("display", "block");
     $(".tabs-header__logo").css("display", "block");
-    $(".tab-content #leader").css("display", "none");
-    $(".tab-content #mil").css("display", "none");
     $(".home-header__logo").css("display", "none");
 });
 $('.btn-mil').click(function(){
     $(".walk__wrapper").addClass("opaque");
-    $(".tab-content #mil").css("display", "block");
+    $(".tab-content ").css("display", "block");
     $(".tabs-header__logo").css("display", "block");
-    $(".tab-content #leader").css("display", "none");
-    $(".tab-content #n-leader").css("display", "none");
     $(".home-header__logo").css("display", "none");
 });
 $('.tabs-header__logo-title').click(function(){
     $(".home-header__logo").css("display", "block");
     $(".walk__wrapper").removeClass("opaque");
-    $(".tab-content #mil").css("display", "none");
     $(".tabs-header__logo").css("display", "none");
-    $(".tab-content #leader").css("display", "none");
-    $(".tab-content #n-leader").css("display", "none");
     $(".nav-tabs li").removeClass("opacity_li");
     $(".nav-tabs li").removeClass("active");
+    $(".tab-content ").css("display", "none");
     
 });
 //opasity btn

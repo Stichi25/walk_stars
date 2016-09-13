@@ -51,10 +51,10 @@
   box-shadow:         @string;
 }
 //box-shadow 4
-.box-shadow-four (@string_1, @string_2,@string_3, @string_4) {
-  -webkit-box-shadow: @string_1, @string_2,@string_3, @string_4;
-  -moz-box-shadow:  @string_1, @string_2,@string_3, @string_4;
-  box-shadow:        @string_1, @string_2,@string_3, @string_4;
+.box-shadow-two (@string_1, @string_2) {
+  -webkit-box-shadow: @string_1, @string_2;
+  -moz-box-shadow:  @string_1, @string_2;
+  box-shadow:        @string_1, @string_2;
 }
 //border radius
 .border-radius (@radius) {
@@ -73,6 +73,9 @@
 }
 
 //transitions
-.transition(@prop: all, @time: 0.3s, @ease: ease-in-out) {
+.transition(@prop: all, @time: 0.5s, @ease: ease-in-out) {
   transition: @prop @time @ease;
+  -webkit-transition:  @prop @time @ease;
+  -moz-transition:  @prop @time @ease;
+  -o-transition:  @prop @time @ease;
 }

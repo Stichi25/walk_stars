@@ -9,6 +9,9 @@ body{
   background-attachment: fixed;
   background-color: #5B2171;
   overflow-x: hidden;
+  @media (max-width: 320px) {
+    overflow-x: inherit;
+  }
   &:before{
     position: fixed;
     content: '';
@@ -27,6 +30,7 @@ body{
   max-width: 100%;
   height: 100%;
   min-height: 100%;
+  min-width: 320px;
   .wrapper-inner{
     display: table-cell;
     vertical-align: middle;
@@ -34,15 +38,22 @@ body{
   }
 
 }
+.container{
+  min-width: 320px;
+}
 
 .tab-content{
   width: 100vw;
-  #leader, #n-leader, #mil {
+ /* #leader, #n-leader, #mil {
     display: none;
-  }
+  }*/
 }
 .cover-container{
   width: 100%;
+  position: relative;
+  /*height: 100%;*/
+  display: block;
+ /* top:30%;*/
   padding-top: 40px;
   @media(min-width:991px) and (max-width: 1500px){
     padding-top: 60px;
@@ -54,6 +65,9 @@ body{
   top: 0;
   width: 100%;
   @media (max-width: 767px){
+    position: relative;
+  }
+  @media (max-height:650px){
     position: relative;
   }
 }
