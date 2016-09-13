@@ -15,6 +15,10 @@
   background-position:@pos;
   background-repeat: no-repeat;
   background-size:cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -ms-background-size: cover;
 }
 .bg-image-color(@bg-image-color, @bg-image-color2){
   background-image: -webkit-gradient(linear, 0 100%, 0 0, from(@bg-image-color2), to(@bg-image-color));
@@ -67,7 +71,7 @@
 .flex{
   display: -webkit-flex;
   display: flex;
-  @media (max-width: 991px) {
+  @media (max-width: 767px) {
     display: inline-block;
   }
 }

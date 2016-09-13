@@ -1,19 +1,24 @@
 html, body {
   height: 100%;
-
+  @media (max-width: 767px) {
+    height: auto;
+  }
 }
 body{
   font-family: @clober-regular;
   font-size: 14px;
-  .bg-img('bg.jpg');
-  background-attachment: fixed;
   background-color: #5B2171;
   overflow-x: hidden;
-  @media (max-width: 320px) {
-    overflow-x: inherit;
-  }
+  .bg-img('bg.jpg');
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  right: 0;
+  position: relative;
   &:before{
-    position: fixed;
+    position: absolute;
     content: '';
     width: 100%;
     height: 100%;
@@ -23,7 +28,13 @@ body{
     left:0;
     bottom: 0;
   }
+  @media (max-width: 320px) {
+    overflow-x: inherit;
+  }
+
 }
+
+
 .wrapper{
   display: table;
   width: 100%;
@@ -47,6 +58,10 @@ body{
  /* #leader, #n-leader, #mil {
     display: none;
   }*/
+  @media(max-width: 991px){
+    min-height: 456px;
+  }
+
 }
 .cover-container{
   width: 100%;
@@ -67,7 +82,10 @@ body{
   @media (max-width: 767px){
     position: relative;
   }
-  @media (max-height:650px){
+  @media (max-height:600px){
+    position: relative;
+  }
+  @media(max-height:768px) and (max-width: 991px){
     position: relative;
   }
 }

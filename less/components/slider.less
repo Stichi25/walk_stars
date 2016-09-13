@@ -10,6 +10,9 @@
   color:@white!important;
   margin-right: 2px!important;
 }
+.owl-item{
+  /*transition: all .25s linear;*/
+}
 //owl carasule style
 .owl-carousel__content{
   text-align: center;
@@ -32,8 +35,8 @@
     padding: 20px;
     background-size: contain;
     -webkit-box-reflect: below -39px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(78%, transparent), to(fade(@yellow, 28%)));
-    @media (max-height:650px){
-      background-position:inherit;
+    @media (min-width: 1000px) and (max-width: 1366px) {
+      background-position: inherit;
     }
   }
   .owl-carousel__content-img {
@@ -91,10 +94,13 @@
   .transition();
 
   .owl-carousel__content-img {
-    @media (min-width: 1000px) and (max-width: 1500px) {
-      width: 80%;
+    @media (min-width: 1367px) and (max-width: 1500px) {
+      width: 70%;
     }
-    @media (max-height:650px){
+    @media (min-width: 1000px) and (max-width: 1366px) {
+      width: 90%;
+    }
+    @media (max-height:600px){
       width: 80%;
     }
   }

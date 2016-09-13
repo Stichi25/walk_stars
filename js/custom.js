@@ -32,7 +32,7 @@ jQuery(document).ready(function () {
                     loop: true,
                     margin: 10,
                     items : 5,
-                    responsiveRefreshRate:50,
+                    responsiveRefreshRate:10,
                     responsiveBaseWidth: window,
                     responsiveClass: true,
                     smartSpeed: 900,
@@ -111,14 +111,80 @@ jQuery(document).ready(function () {
             demo.removeClass('off');
 
         } else if (checkWidth < 767) {
+
             demo.addClass('off');
+            $('.btn-leader').click(function(){
+                $(".tab-content #leader").addClass('animated zoomIn');
+            });
+            $('.btn-n-leader').click(function(){
+                $(".tab-content #n-leader").addClass('animated  zoomIn');
+            });
+            $('.btn-mil').click(function(){
+                $(".tab-content #mil").addClass('animated  zoomIn');
+            });
         }
     }
 
     $(document).ready(mobile);
     $(window).resize(mobile);
 });
+/*$(function() {
+    var owl = $('.owl-carousel'),
+    owlOptions = {
+        loop: true,
+        margin: 10,
+        items : 5,
+        responsiveRefreshRate:10,
+        responsiveBaseWidth: window,
+        responsiveClass: true,
+        smartSpeed: 900,
+        paginationSpeed : 800,
+        rewindSpeed : 1000,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            768: {
+                items: 3,
+                nav: true
+            },
+            1023: {
+                items: 5,
+                nav: true
 
+            }
+        },
+        dots: false,
+        nav: true,
+        navText:["<i class='fa-left fa-icon'></i>",
+            "<i class='fa-right fa-icon'></i>"]
+    };
+
+
+
+    if ( $(window).width() < 767 ) {
+        owl.addClass('off');
+    } else {
+
+        var owlActive = owl.owlCarousel(owlOptions);
+    }
+
+    $(window).resize(function() {
+        if ( $(window).width() < 767 ) {
+            if (
+                !$('.owl-carousel').hasClass('off') ) {
+        owl.addClass('off').trigger('destroy.owl.carousel');
+        owl.find('.owl-stage-outer').children(':eq(0)').unwrap();
+            }
+        } else {
+            if (  $('.owl-carousel').hasClass('off') ) {
+                var owlActive = owl.owlCarousel(owlOptions);
+                owl.removeClass('off');
+            }
+        }
+    });
+});*/
 /*jQuery(document).ready(function () {
 
     function mobile() {
@@ -162,8 +228,8 @@ jQuery(document).ready(function () {
    }
     $(document).ready(mobile);
     $(window).resize(mobile);
-});*/
-
+});
+*/
 //скрытие элементов
 $('.btn-leader').click(function(){
     $(".walk__wrapper").addClass("opaque");
@@ -199,3 +265,5 @@ $(".nav-tabs").on("click", "li", function(){
     $(this).removeClass("opacity_li");
 });
 
+var isiPad = navigator.userAgent.match(/iPad/i) != null;
+if (isiPad) {document.getElementsByTagName("body")[0].className+=" ipad";}
