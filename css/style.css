@@ -3775,6 +3775,11 @@ body:before {
     margin-top: 100px;
   }
 }
+@media (max-width: 1366px) {
+  .modal-content {
+    margin-top: 30px;
+  }
+}
 .fade.in {
   background: rgba(0, 0, 10, 0.7);
   overflow-x: hidden;
@@ -3801,6 +3806,7 @@ body:before {
 }
 .popup-leader .modal-body {
   position: relative;
+  z-index: -1;
 }
 .popup-leader .modal-body:before {
   position: absolute;
@@ -3945,6 +3951,7 @@ body:before {
   }
 }
 .popup-millionaire .modal-body {
+  z-index: -1;
   position: relative;
 }
 .popup-millionaire .modal-body:before {
@@ -4193,16 +4200,12 @@ body:before {
   position: relative;
   overflow-x: hidden;
   z-index: 5;
-  display: none;
+  /* display: none;*/
+  /* min-height: 413px;*/
 }
-@media (max-width: 991px) {
+@media (max-width: 991px) and (min-width: 768px) {
   .tab-content {
     min-height: 456px;
-  }
-}
-@media (max-width: 767px) {
-  .tab-content .tab-pane {
-    min-height: 480px;
   }
 }
 .tab-content .owl-carousel.off {
@@ -4342,6 +4345,15 @@ body:before {
   text-align: center;
   display: inline-block;
 }
+@media (max-width: 767px) {
+  .owl-stage {
+    width: auto!important;
+  }
+  .owl-item.active,
+  .owl-item {
+    width: auto!important;
+  }
+}
 .header {
   position: relative;
 }
@@ -4399,6 +4411,9 @@ body:before {
   .header .header__tabs-logo {
     background: rgba(0, 0, 10, 0.5);
   }
+}
+.header .header__tabs-logo .row {
+  margin-right: auto;
 }
 .header .header__tabs-title {
   padding-top: 180px;
@@ -4613,5 +4628,34 @@ body:before {
 @media (max-height: 768px) and (max-width: 991px) {
   .opaque {
     display: none;
+  }
+}
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: block;
+  /* undo display:none          */
+  height: 0;
+  /* height:0 is also invisible */
+  overflow: hidden;
+  /* no-overflow                */
+}
+@media (max-width: 767px) {
+  .tab-content > .tab-pane,
+  .pill-content > .pill-pane {
+    height: inherit;
+    display: none;
+  }
+}
+.tab-content > .active,
+.pill-content > .active {
+  min-height: 423px;
+  height: auto;
+  /* let the content decide it  */
+}
+@media (max-width: 767px) {
+  .tab-content > .active,
+  .pill-content > .active {
+    height: inherit;
+    display: block;
   }
 }

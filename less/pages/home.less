@@ -40,6 +40,10 @@
     @media (max-width: 767px){
       background: fade(@accent, 50%);
     }
+      .row{
+        margin-right: auto;
+
+    }
 
   }
   .header__tabs-title{
@@ -184,7 +188,7 @@
 //nav-tabs
 
 .fixed__nav-tabs{
-  position: fixed;
+ position: fixed;
   bottom: 0;
   width: 100%;
   .transition();
@@ -230,3 +234,20 @@
 }
 
 
+.tab-content > .tab-pane, .pill-content > .pill-pane {
+  display: block;    /* undo display:none          */
+  height: 0;         /* height:0 is also invisible */
+  overflow: hidden;  /* no-overflow                */
+  @media (max-width: 767px) {
+    height: inherit;
+    display: none;
+  }
+}
+.tab-content > .active, .pill-content > .active {
+  min-height: 423px;
+  height: auto;/* let the content decide it  */
+  @media (max-width: 767px) {
+    height: inherit;
+    display: block;
+  }
+}

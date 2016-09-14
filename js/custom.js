@@ -1,132 +1,130 @@
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
 
     function mobile() {
         var checkWidth = $(window).width();
-        var owl = $(".owl-carousel");
-        var owlActive = owl.owlCarousel;
-        if (checkWidth >= 768) {
-            $(document).ready(function () {
+        var demo = $(".ow-trere");
+        var demo2 = $("#owl3");
+        if (checkWidth > 767) {
+            demo.addClass('owl-carousel');
+            demo.owlCarousel({
+                singleItem:true,
+                items:5,
+                dots: false,
+                nav:true,
+                responsiveRefreshRate:5,
+                responsiveBaseWidth: window,
+                responsiveClass: true,
+                smartSpeed: 900,
+                paginationSpeed : 800,
+                rewindSpeed : 1000,
+                mouseDrag: false,
+                touchDrag: false,
+                navText:["<i class='fa-left fa-icon'></i>",
+                    "<i class='fa-right fa-icon'></i>"],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
 
-                $('a[href="#leader"]').on('shown.bs.tab', function () {
-                    initialize_owl($('#owl1'));
-                }).on('hide.bs.tab', function () {
-                    destroy_owl($('#owl1'));
-                });
+                    },
+                    768: {
+                        items: 3,
+                        nav: true,
 
-                $('a[href="#n-leader"]').on('shown.bs.tab', function () {
-                    initialize_owl($('#owl2'));
-                }).on('hide.bs.tab', function () {
-                    destroy_owl($('#owl2'));
-                });
+                    },
+                    1023: {
+                        items: 5,
+                        nav: true,
 
-                $('a[href="#millionaire"]').on('shown.bs.tab', function () {
-                    initialize_owl1($('#owl3'));
-                }).on('hide.bs.tab', function () {
-                    destroy_owl1($('#owl3'));
-                });
+
+                    }
+                },
+
 
             });
-
-            function initialize_owl(el) {
-                el.owlCarousel({
-                    loop: true,
-                    margin: 10,
-                    items : 5,
-                    responsiveRefreshRate:10,
-                    responsiveBaseWidth: window,
-                    responsiveClass: true,
-                    smartSpeed: 900,
-                    paginationSpeed : 800,
-                    rewindSpeed : 1000,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: true
-                        },
-                        768: {
-                            items: 3,
-                            nav: true
-                        },
-                        1023: {
-                            items: 5,
-                            nav: true
-
-                        }
+            demo2.addClass('owl-carousel');
+            demo2.owlCarousel({
+                singleItem:true,
+                items:4,
+                dots: false,
+                nav:true,
+                responsiveRefreshRate:5,
+                responsiveBaseWidth: window,
+                responsiveClass: true,
+                smartSpeed: 900,
+                paginationSpeed : 800,
+                rewindSpeed : 1000,
+                mouseDrag: false,
+                touchDrag: false,
+                navText:["<i class='fa-left fa-icon'></i>",
+                    "<i class='fa-right fa-icon'></i>"],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
                     },
-                    dots: false,
-                    nav: true,
-                    navText:["<i class='fa-left fa-icon'></i>",
-                        "<i class='fa-right fa-icon'></i>"]
-
-
-                });
-            }
-
-            function destroy_owl(el) {
-                el.data('owlCarousel').destroy();
-            }
-            function initialize_owl1(el) {
-
-                el.owlCarousel({
-                    loop: false,
-                    margin: 10,
-                    items : 4,
-                    responsiveRefreshRate:50,
-                    smartSpeed: 700,
-                    nav: false,
-                    navText:["<i class='fa-left fa-icon'></i>",
-                        "<i class='fa-right fa-icon'></i>"],
-                    responsiveClass: true,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: true
-                        },
-                        768: {
-                            items: 2,
-                            nav: true
-                        },
-                        1023: {
-                            items: 4
-                        }
+                    768: {
+                        items: 3,
+                        nav: true,
                     },
-                    dots: false
-                });
-            }
-// Custom Navigation Events
+                    1023: {
+                        items: 4,
+                        nav: false,
+
+                    }
+                },
 
 
-            function destroy_owl1(el) {
-                el.data('owlCarousel').destroy();
-            }
+            });
             $('.btn-leader').click(function(){
-                $(".tab-content #leader").addClass('animated slideInRight');
+                $(".owl-carousel").addClass('animated slideInRight');
+                $("#n-leader .owl-carousel").removeClass('animated slideInRight');
+                $("#millionaire .owl-carousel").removeClass('animated slideInRight');
             });
             $('.btn-n-leader').click(function(){
-                $(".tab-content #n-leader").addClass('animated slideInRight');
+                $(".owl-carousel").addClass('animated slideInRight');
+                $("#leader .owl-carousel").removeClass('animated slideInRight');
+                $("#millionaire .owl-carousel").removeClass('animated slideInRight');
             });
             $('.btn-millionaire').click(function(){
-                $(".tab-content #millionaire").addClass('animated slideInRight');
+                $(".owl-carousel").addClass('animated slideInRight');
+                $("#leader .owl-carousel").removeClass('animated slideInRight');
+                $("#n-leader .owl-carousel").removeClass('animated slideInRight');
             });
-            owl.removeClass('off');
 
-        } else if (checkWidth < 767) {
-            owl.addClass('off');
+        } else if (checkWidth < 768) {
+
+            demo.removeClass('owl-carousel');
+            demo2.removeClass('owl-carousel');
+
             $('.btn-leader').click(function(){
-                $(".tab-content #leader").addClass('animated zoomIn');
+                $("#owl1").addClass('animated zoomIn');
+                $(".owl-carousel").removeClass('animated slideInRight');
+                $("#owl2").removeClass('animated zoomIn');
+                $("#owl3").removeClass('animated zoomIn');
             });
             $('.btn-n-leader').click(function(){
-                $(".tab-content #n-leader").addClass('animated  zoomIn');
+                $("#owl2").addClass('animated zoomIn');
+                $(".owl-carousel").removeClass('animated slideInRight');
+                $("#owl1").removeClass('animated zoomIn');
+                $("#owl3").removeClass('animated zoomIn');
             });
             $('.btn-millionaire').click(function(){
-                $(".tab-content #millionaire").addClass('animated  zoomIn');
+                $("#owl3").addClass('animated zoomIn');
+                $(".owl-carousel").removeClass('animated slideInRight');
+                $("#owl2").removeClass('animated zoomIn');
+                $("#owl1").removeClass('animated zoomIn');
             });
+
         }
-    }
-    $(document).ready(mobile);
 
+    }
+
+    $(document).ready(mobile);
+    $(window).resize(mobile);
 });
+
 
 //скрытие элементов
 $('.btn-leader').click(function(){

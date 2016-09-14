@@ -7,6 +7,9 @@
   @media (max-width: 1500px) {
     margin-top: 100px;
   }
+  @media(max-width: 1366px){
+    margin-top: 30px;
+  }
 }
 .fade.in{
   background: fade(@accent, 70%);
@@ -33,6 +36,7 @@
 
   .modal-body{
     position: relative;
+    z-index: -1;
     &:before{
       position: absolute;
       content: '';
@@ -151,6 +155,7 @@
 //popup-millionaire
 .popup-millionaire{
   .modal-body{
+    z-index: -1;
     position: relative;
     &:before{
       position: absolute;

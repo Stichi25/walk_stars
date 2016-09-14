@@ -3,14 +3,10 @@
   position: relative;
   overflow-x: hidden;
   z-index: 5;
-  display: none;
-  @media(max-width: 991px){
+/* display: none;*/
+ /* min-height: 413px;*/
+  @media(max-width: 991px) and (min-width: 768px){
     min-height: 456px;
-  }
-  .tab-pane{
-    @media(max-width: 767px) {
-      min-height: 480px;
-    }
   }
 
   .owl-carousel.off {
@@ -148,4 +144,12 @@
   }
 
 
+}
+@media (max-width: 767px){
+  .owl-stage{
+    width: auto!important;
+  }
+  .owl-item.active, .owl-item{
+    width: auto!important;
+  }
 }
