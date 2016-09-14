@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     function mobile() {
@@ -5,7 +6,6 @@ $(document).ready(function () {
         var owl = $(".owl-carousel");
         var owlActive = owl.owlCarousel;
         if (checkWidth >= 768) {
-
             $(document).ready(function () {
 
                 $('a[href="#leader"]').on('shown.bs.tab', function () {
@@ -124,9 +124,9 @@ $(document).ready(function () {
             });
         }
     }
-
     $(document).ready(mobile);
-});  
+
+});
 
 //скрытие элементов
 $('.btn-leader').click(function(){

@@ -4200,8 +4200,10 @@ body:before {
     min-height: 456px;
   }
 }
-.tab-content .tab-pane {
-  min-height: 480px;
+@media (max-width: 767px) {
+  .tab-content .tab-pane {
+    min-height: 480px;
+  }
 }
 .tab-content .owl-carousel.off {
   display: block;
