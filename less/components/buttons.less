@@ -7,7 +7,7 @@
   color: @yellow;
   width: 80%;
   transition: box-shadow .5s;
-
+.transition();
 
   &:focus, &:active, &:hover{
     color: @yellow;
@@ -50,7 +50,7 @@
   text-align: center;
 }
 //general styles
-.btn-leader, .btn-n-leader, .btn-mil{
+.btn-leader, .btn-n-leader, .btn-millionaire{
   .btn();
   margin-top: 5px;
   padding: 15px 15px 10px 15px !important;
@@ -110,8 +110,8 @@
   }
 
 }//.btn-n-leader
-//btn-mil
-.btn-mil{
+//btn-millionaire
+.btn-millionaire{
   background:#380915;
   border-bottom: 1px solid #7C2D4B!important;
   .bg-gradient-linear-btn(#7A1C36 0%,  #7B1C37 3%, #771239 16%, #29050E 50%);
@@ -132,7 +132,7 @@
     .bg-gradient-linear-btn(#7A1C36 0%,  #7B1C37 3%, #771239 16%, #29050E 50%)!important;
     .box-shadow-two(0px -17px 35px -14px #DD00E1,  0px 12px 24px -12px #DD00E1);
   }
-}//.btn-mil
+}//.btn-millionaire
 
 
   .nav-tabs>li.active>a.btn-leader{
@@ -142,7 +142,7 @@
 .nav-tabs>li.active>a.btn-n-leader{
   .box-shadow-two(0px -17px 35px -14px #F38F00,  0px 12px 24px -12px #F38F00);
 }
-.nav-tabs>li.active>a.btn-mil{
+.nav-tabs>li.active>a.btn-millionaire{
   .box-shadow-two(0px -17px 35px -14px #DD00E1,  0px 12px 24px -12px #DD00E1);
 }
 
@@ -151,23 +151,16 @@
   color: @yellow;
 
 }
-.opacity_li:hover{
-  opacity: 1!important;
-}
+
 .opacity_li{
   opacity: 0.65;
   .transition();
+  &:hover{
+    opacity: 1!important;
+  }
 }
 //стили бутстрапа
 .nav-tabs>li>a{
   border: none;
   border-radius: 0;
-}
-.owl-btn {
-  color: #777;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 2px 9px;
-  text-align: center;
-  background: #f5f5f5;
 }

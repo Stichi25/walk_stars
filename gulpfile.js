@@ -11,7 +11,9 @@ gulp.task('less', function () {
 gulp.task('scripts', function() {
     return gulp.src([
         './libs/bootstrap/js/bootstrap.min.js',
-        './libs/owl.carousel/owl.carousel.js']
+        './libs/owl.carousel/owl.carousel.js',
+        './js/custom.js'
+    ]
     )
         .pipe(concat('build.js'))
         .pipe(gulp.dest('./build/'));

@@ -1,14 +1,14 @@
 .header{
   position: relative;
   //logo_home
-  .home-header__logo{
+  .header__home-logo{
     margin-top: 30px;
     margin-bottom: 20px;
     @media(min-width:1000px) and (max-width: 1500px){
       margin-top: 20px;
     }
   }
-  .header__logo-title{
+  .header__home-title{
     padding-top:200px;
     height: 0;
     overflow: hidden;
@@ -26,7 +26,7 @@
 
   }
   //logo tabs
-  .tabs-header__logo{
+  .header__tabs-logo{
     position: relative;
     background:  radial-gradient(circle farthest-corner at 164px 70px, #271A7D -1%, rgba(0, 0, 10, 0.7)9%);
     margin-top:4%;
@@ -42,7 +42,7 @@
     }
 
   }
-  .tabs-header__logo-title{
+  .header__tabs-title{
     padding-top:180px;
     height: 0;
     overflow: hidden;
@@ -182,14 +182,12 @@
 
 
 //nav-tabs
-.nav-tabs{
-  border-bottom: none;
 
-}
 .fixed__nav-tabs{
   position: fixed;
   bottom: 0;
   width: 100%;
+  .transition();
   @media (max-width: 767px) {
    position: relative;
   }
@@ -206,19 +204,16 @@
       padding: 30px 0
     }
   }
-}
-.nav>li>a:hover{
-  background: none;
-  border:none;
+  .nav-tabs{
+    border-bottom: none;
+  }
+  .nav>li>a:hover{
+    background: none;
+    border:none;
+  }
 }
 
-//tabs
-.tab-content{
-  position: relative;
-  overflow-x: hidden;
-  z-index: 5;
-  display: none;
-}
+
 //effects opacity
 .opaque{
   opacity: 0;
